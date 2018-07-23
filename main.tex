@@ -28,6 +28,9 @@
 %\restylefloat{figure}
 
 \graphicspath{ {./images/} }
+
+\newcommand{\snr}{$E_{b}/N_{0}$}
+
 \begin{document}
 
 \begin{titlepage}
@@ -114,6 +117,7 @@ Answer here.
 
 \begin{table}[h]
 \centering
+\caption{\label{tab:transmit_power_levels}Transmit power levels to achieve different $E_{b}/N_{0}$.}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 
 \hline
@@ -121,7 +125,7 @@ $E_{b}/N_{0}$ (dB) & -4 & -2 & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\\hline
 $P_{\tau}$ (W) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline             % ***** EDIT HERE *****
 
 \end{tabular}
-\caption{\label{tab:transmit_power_levels}Transmit power levels to achieve different $E_{b}/N_{0}$.}
+
 \end{table}
 
 \subsection{Table 1's answer}
@@ -148,21 +152,31 @@ Answer
 %----------------------------------------------------------------------------------------%
 
 \section{Error correction using Convolution codes}
-\subsection{Build the baseband communication model shown in Figure 4 in Simulink}
+\subsection{Simulink Model}
 \begin{center}
-\includegraphics[width=.7\textwidth]{images/q6-model.png}
-\label{fig:q6-model}
-\captionof{figure}{Baseband communication system with Convolution coder / Viterbi decoder in an AWGN
-channel}
+    \includegraphics[width=.8\textwidth]{q6-model.pdf}
+    \label{fig:q6-model}
+    \captionof{figure}{Baseband communication system with Convolution coder / Viterbi decoder in an AWGN channel \cite{simulink}}
 \end{center}
-\subsection{Carry out the simulation for each $E_b/N_0$ value given in the table 1 separately. Continue your
-simulations until you obtain at least 100 bit errors for each $E_b/N_0$ value}
-Answer
-\subsection{Plot the average BER obtained for uncoded and convolutional coded systems with the
-$E_b/N_0$ on the same graph}
-Answer
-\subsection{Table 1's answer}
-Answer
+
+\subsection{Effect of Convolution coding to BER}
+\begin{table}[h]
+    \centering
+    \caption{\label{tab:transmit_power_levels_sim}BER for Convolutional and Uncoded systems with respect to $E_{b}/N_{0}$ value.}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \snr (dB) & -4       & -2       & 0         & 2         & 4       & 6        & 8         & 10 & 12 \\\hline
+        Uncoded   & 0.1789   & 0.1296   & 0.07894   & 0.03753   & 0.01269 & 0.002377 & 0.0002126 & 0  & 0 \\\hline
+        Coded     & 0.4195   & 0.2695   & 0.04295   & 0.0006221 & 0       & 0        & 0         & 0  & 0 \\\hline
+    \end{tabular}
+\end{table}
+
+\subsection{BER Graph}
+\begin{center}
+    \includegraphics[width=.5\textwidth]{q613.eps}
+    \label{fig:q613}
+    \captionof{figure}{BER Uncoded Vs. Convolutional Coded}
+\end{center}
 
 %----------------------------------------------------------------------------------------%
 %                                     DISCUSSION                                         %
