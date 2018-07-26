@@ -1,11 +1,8 @@
 \documentclass[11pt]{article}
-\renewcommand{\baselinestretch}{1} 
 \usepackage[utf8]{inputenc}
 \usepackage[rightcaption]{sidecap}
-
 \usepackage{float}
 \usepackage{wrapfig}
-
 \usepackage{natbib}
 \usepackage{algorithm}% http://ctan.org/pkg/algorithm
 \usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
@@ -13,12 +10,12 @@
 \usepackage{caption}
 \usepackage{capt-of}
 \usepackage{subcaption}
-
 \usepackage{verbatim}
 \usepackage{grffile}
 \usepackage[subsection]{placeins}
 \usepackage{geometry}
 \usepackage[framed ,numbered]{matlab-prettifier}
+
 \geometry{
  a4paper,
  left=25mm,
@@ -28,11 +25,9 @@
 
 %\floatstyle{boxed} % or whatever
 %\restylefloat{figure}
-
 \graphicspath{ {./images/} }
-
 \newcommand{\snr}{$E_{b}/N_{0}$}
-
+\renewcommand{\baselinestretch}{1} 
 
 \begin{document}
 
@@ -143,8 +138,8 @@ $P_{\tau}$ (W) & 0.0796 & 0.1262 & 0.2000 & 0.3170 & 0.5024 &	0.7962 &	1.2619	& 
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 
 \hline
-$E_{b}/N_{0}$ (dB) & -4 & -2 & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\\hline
-$BER$  & 0.0796 & 0.1262 & 0.2000 & 0.3170 & 0.5024 &	0.7962 &	1.2619	& 2.0000 & 3.1698 \\\hline             % ***** EDIT HERE *****
+\snr (dB) & -4     &     -2 &      0 &      2 &      4 &         6 &          8 &     10 &     12 \\\hline
+$BER$     & 0.0796 & 0.1262 & 0.2000 & 0.3170 & 0.5024 &	0.7962 &	1.2619	& 2.0000 & 3.1698 \\\hline
 
 \end{tabular}
 
