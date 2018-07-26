@@ -13,10 +13,12 @@
 \usepackage{caption}
 \usepackage{capt-of}
 \usepackage{subcaption}
+
 \usepackage{verbatim}
 \usepackage{grffile}
 \usepackage[subsection]{placeins}
 \usepackage{geometry}
+\usepackage[framed ,numbered]{matlab-prettifier}
 \geometry{
  a4paper,
  left=25mm,
@@ -31,6 +33,7 @@
 
 \newcommand{\snr}{$E_{b}/N_{0}$}
 
+
 \begin{document}
 
 \begin{titlepage}
@@ -38,7 +41,7 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.9mm}} % Defines a new command for the horizontal lines, change thickness here
 
 \center % Center everything on the page
-\\[0.5cm]
+%\\[0.5cm]
 %----------------------------------------------------------------------------------------
 %    HEADING SECTIONS
 %----------------------------------------------------------------------------------------
@@ -59,10 +62,10 @@ Engineering}\small \\EN 4053 - Digital Communication II}\\[10mm] % Name of your 
 %----------------------------------------------------------------------------------------
 
 %\HRule
-\\[1cm]
+%\\[1cm]
 { \huge \bfseries Error Correction Coding}\\[9cm] % Title of your document
 %\HRule 
-\\[1cm]
+%\\[1cm]
  
 %----------------------------------------------------------------------------------------
 %    AUTHOR SECTION
@@ -71,9 +74,9 @@ Engineering}\small \\EN 4053 - Digital Communication II}\\[10mm] % Name of your 
 
 \emph{\large \textbf{Group Members:}}\\
 \begin{tabular}{ll}\large
-\large A. L. A. V. \textsc{Isuru}&\tab \large - 140239D\\
-\large H.D. \textsc{Fernando}&\tab \large - 140154L\\
-\large W.D.A.P. \textsc{Ravinath}&\tab \large - 140530L
+\large A. L. A. V. \textsc{Isuru}& \large - 140239D\\
+\large H.D. \textsc{Fernando}& \large - 140154L\\
+\large W.D.A.P. \textsc{Ravinath}& \large - 140530L
 \end{tabular}\\[1cm]
 
 
@@ -104,16 +107,17 @@ Engineering}\small \\EN 4053 - Digital Communication II}\\[10mm] % Name of your 
 
 
 \section{Transmission of data over an AWGN channel}
-\subsection{Baseband Communication System}
+\subsection{Implement the baseband communication system shown in Figure 1 in Matlab}
 \begin{center}
 \includegraphics[width=.7\textwidth]{baseband-com-in-awgn-ch.pdf}
 \label{fig:baseband-com-sys}
 \captionof{figure}{Baseband Communication System in an AWGN Channel}
 \end{center}
-Answer here.
 
+\lstinputlisting[style=Matlab-editor, caption={Calculating error amount per one iteration}]{UNCODED_SYSTEM.m}
+\lstinputlisting[style=Matlab-editor, caption={Average error count per one signal}]{BER.m}
 
-\subsection{Table 1's answer}
+\subsection{Transmit powers corresponding to different Eb/No values given in Table 1.}
 
 \begin{table}[h]
 \centering
@@ -122,16 +126,30 @@ Answer here.
 
 \hline
 $E_{b}/N_{0}$ (dB) & -4 & -2 & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\\hline
-$P_{\tau}$ (W) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline             % ***** EDIT HERE *****
+$P_{\tau}$ (W) & 0.0796 & 0.1262 & 0.2000 & 0.3170 & 0.5024 &	0.7962 &	1.2619	& 2.0000 & 3.1698 \\\hline             % ***** EDIT HERE *****
 
 \end{tabular}
 
 \end{table}
 
-\subsection{Table 1's answer}
-Answer
-\subsection{Table 1's answer}
-Answer
+\subsection{Carry out the simulation for each Eb/No value given separately. Continue your simulations until you obtain at least 100 bit errors for each Eb/No value.}
+\subsection{Obtain the average bit error rate (BER) for each Eb/No value.}
+\lstinputlisting[style=Matlab-editor, caption={Calculating BER}]{BER_for_table.m}
+
+
+\begin{table}[h]
+\centering
+\caption{BER for corresponding $E_{b}/N_{0}$ values}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+
+\hline
+$E_{b}/N_{0}$ (dB) & -4 & -2 & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\\hline
+$BER$  & 0.0796 & 0.1262 & 0.2000 & 0.3170 & 0.5024 &	0.7962 &	1.2619	& 2.0000 & 3.1698 \\\hline             % ***** EDIT HERE *****
+
+\end{tabular}
+
+\end{table}
+
 %----------------------------------------------------------------------------------------%
 %                                     HESHAN                                             %
 %----------------------------------------------------------------------------------------%
